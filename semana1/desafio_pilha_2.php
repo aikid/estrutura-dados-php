@@ -32,6 +32,11 @@ function mostrarPilha(){
     print_r($pilha);
 }
 
+function verificarBalanceamento($expressao){
+   echo "Verificando balanceamento da expressão: $expressao\n";
+   exit;
+}
+
 while (true) {
     echo "\nDigite uma expressão matemática (ou '0' para encerrar): ";
     $opcao = trim(fgets(STDIN));
@@ -40,6 +45,7 @@ while (true) {
             echo "Saindo...\n";
         exit;
         default:
-            echo "Opção inválida!\n";
+            verificarBalanceamento($opcao);
+        break;
     }
 }
